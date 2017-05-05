@@ -9,15 +9,17 @@ var cognitiveservices = require('botbuilder-cognitiveservices');
 
 // Setup Restify Server
 var server = restify.createServer();
+console.log('testing');
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
-  
+  console.log('Server listening');
 // Create chat bot
 var connector = new builder.ChatConnector({
- appId: '27d0ef43-7adf-43cd-a469-497fd3368860',
- appPassword: 'qbdcMPqngbYaiDNVssRwBn2'
+ appId: process.env.MICROSOFT_APP_ID,
+ appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
+console.log('before api messages');
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 //=========================================================
