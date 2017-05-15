@@ -27,7 +27,7 @@ server.post('/api/messages', connector.listen());
 //=========================================================
 
 var recognizer = new cognitiveservices.QnAMakerRecognizer({
-	knowledgeBaseId: '9c0ef106-fe80-4bc2-bfba-0f3552d2d7dd', 
+	knowledgeBaseId: '7fbd785f-82f5-487e-b151-37e3b97ce603', 
 	subscriptionKey: ' 9918e6b35ba340c69d1333920ad4de30'});
 	
 var basicQnAMakerDialog = new cognitiveservices.QnAMakerDialog({
